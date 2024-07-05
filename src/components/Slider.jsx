@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import productApi from "../api/fetchProducts";
 import CardProduct from "./cardProduct";
 
 function Slider({ query }) {
   const [loading, setLoading] = useState(true);
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState({});
 
   useEffect(() => {
     productApi(query).then((data) => {
