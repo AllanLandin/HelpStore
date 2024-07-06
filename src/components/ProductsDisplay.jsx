@@ -1,11 +1,23 @@
+import { useRef, useState } from "react";
 import Slider from "./Slider";
 function ProductsDisplay() {
+  const [categories, setCategories] = useState([
+    "celular",
+    "televisão",
+    "notebook",
+  ]);
+
   return (
     <>
       <div>
-        <Slider query="celular" />
-        <Slider query="computador" />
-        <Slider query="televisão" />
+        {categories.map((category) => {
+          return (
+            <div>
+              <div>{category.charAt(0).toUpperCase() + category.slice(1)}</div>
+              <Slider query={category} />
+            </div>
+          );
+        })}
       </div>
     </>
   );

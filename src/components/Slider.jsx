@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import productApi from "../api/fetchProducts";
-import CardProduct from "./cardProduct";
+import CardProduct from "./CardProduct";
+import "swiper/css";
 
 function Slider({ query }) {
   const [loading, setLoading] = useState(true);
@@ -15,11 +16,13 @@ function Slider({ query }) {
 
   return (
     !loading && (
-      <div className="flex gap-x-3 m-2">
+      <swiper-container>
         {products.map((product, index) => (
-          <CardProduct key={index} product={product} />
+          <swiper-slide key="index" class="m-2">
+            <CardProduct key={index} product={product} />
+          </swiper-slide>
         ))}
-      </div>
+      </swiper-container>
     )
   );
 }

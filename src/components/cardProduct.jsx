@@ -1,4 +1,4 @@
-function cardProduct({ product }) {
+function CardProduct({ product }) {
   return (
     <>
       <div className="p-3 bg-purple-500 rounded">
@@ -9,4 +9,4 @@ function cardProduct({ product }) {
   );
 }
 
-export default cardProduct;
+export default CardProduct;
