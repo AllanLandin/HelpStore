@@ -10,11 +10,13 @@ function ProductsDisplay() {
   return (
     <>
       <div>
-        {categories.map((category) => {
+        {categories.map((category, index) => {
           return (
-            <div>
-              <div>{category.charAt(0).toUpperCase() + category.slice(1)}</div>
-              <Slider query={category} />
+            <div key={index + 1}>
+              <div key={index + 2}>
+                {category.charAt(0).toUpperCase() + category.slice(1)}
+              </div>
+              <Slider query={category} key={index + 3} />
             </div>
           );
         })}

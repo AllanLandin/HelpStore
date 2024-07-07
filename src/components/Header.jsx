@@ -7,9 +7,9 @@ function Header() {
         <span className="text-red-500 font-bold">Help</span>
         Store
       </div>
-      <form className="flex grow max-w-xl justify-between rounded p-2 border focus-within:border-red-500">
+      <form className="flex grow max-w-xl justify-between rounded p-2 border border-current focus-within:border-red-500">
         <input
-          className="bg-transparent focus:outline-none placeholder:text-white-500"
+          className="grow bg-transparent focus:outline-none placeholder:text-white-500"
           type="search"
           placeholder="Buscar Produto"
         ></input>

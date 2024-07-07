@@ -18,7 +18,7 @@ function Slider({ query }) {
     !loading && (
       <swiper-container>
         {products.map((product, index) => (
-          <swiper-slide key="index" class="m-2">
+          <swiper-slide key={index} class="m-2">
             <CardProduct key={index} product={product} />
           </swiper-slide>
         ))}
