@@ -1,7 +1,14 @@
 import { useContext, useEffect, useState } from "react";
+
 import productApi from "../api/fetchProducts";
 import CardProduct from "./CardProduct";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 function Slider({ query }) {
   const [loading, setLoading] = useState(true);
@@ -16,13 +23,20 @@ function Slider({ query }) {
 
   return (
     !loading && (
-      <swiper-container>
+      <Swiper
+        modules={[Navigation, Pagination, A11y]}
+        navigation
+        slidesPerView={4}
+        pagination={{ clickable: true }}
+        grabCursor="true"
+        slid
+      >
         {products.map((product, index) => (
-          <swiper-slide key={index} class="m-2">
+          <SwiperSlide key={index} className="m-2">
             <CardProduct key={index} product={product} />
-          </swiper-slide>
+          </SwiperSlide>
         ))}
-      </swiper-container>
+      </Swiper>
     )
   );
 }
