@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Slider from "./Slider";
 function ProductsDisplay() {
   const [categories, setCategories] = useState([
@@ -12,10 +12,13 @@ function ProductsDisplay() {
       <div>
         {categories.map((category, index) => {
           return (
-            <div key={index + 1}>
-              <div key={index + 2}>
+            <div className="my-5" key={index + 1}>
+              <p
+                className="text-center text-slate-500 font-bold text-3xl my-5"
+                key={index + 2}
+              >
                 {category.charAt(0).toUpperCase() + category.slice(1)}
-              </div>
+              </p>
               <Slider query={category} key={index + 3} />
             </div>
           );

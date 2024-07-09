@@ -24,17 +24,34 @@ function Slider({ query }) {
   return (
     !loading && (
       <Swiper
-        className=""
+        autoHeight={true}
+        spaceBetween={20}
         modules={[Navigation, Pagination, A11y]}
         navigation
-        slidesPerView={4}
-        pagination={{ clickable: true }}
         grabCursor="true"
-        slid
+        style={{ width: "100%", height: "max-content" }}
+        breakpoints={{
+          100: {
+            slidesPerView: 1,
+            spaceBetween: 10,
+          },
+          500: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          940: {
+            slidesPerView: 3,
+            spaceBetween: 10,
+          },
+          1024: {
+            slidesPerView: 4.5,
+            spaceBetween: 10,
+          },
+        }}
       >
         {products.slice(0, 20).map((product, index) => (
-          <SwiperSlide key={index} className="m-2">
-            <CardProduct className="" key={index} product={product} />
+          <SwiperSlide key={index}>
+            <CardProduct key={index} product={product} />
           </SwiperSlide>
         ))}
       </Swiper>
