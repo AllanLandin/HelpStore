@@ -24,6 +24,7 @@ function Slider({ query }) {
   return (
     !loading && (
       <Swiper
+        className=""
         modules={[Navigation, Pagination, A11y]}
         navigation
         slidesPerView={4}
@@ -31,9 +32,9 @@ function Slider({ query }) {
         grabCursor="true"
         slid
       >
-        {products.map((product, index) => (
+        {products.slice(0, 20).map((product, index) => (
           <SwiperSlide key={index} className="m-2">
-            <CardProduct key={index} product={product} />
+            <CardProduct className="" key={index} product={product} />
           </SwiperSlide>
         ))}
       </Swiper>
