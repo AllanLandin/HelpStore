@@ -1,13 +1,13 @@
 import "./styles/App.css";
 import ProductsDisplay from "./components/ProductsDisplay";
 import Header from "./components/Header";
-import Intro from "./components/Intro";
+import Main from "./components/Main";
 
 function App() {
   return (
     <div className="px-5">
       <Header />
-      <Intro />
+      <Main />
       <ProductsDisplay />
     </div>
   );
