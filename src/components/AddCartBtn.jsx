@@ -1,8 +1,22 @@
-function AddCartBtn() {
+import { useContext } from "react";
+import { productsOnCartContext } from "../contexts/ProductContext";
+import toast from "react-hot-toast";
+
+function AddCartBtn({ product }) {
+  const [products, setProducts] = useContext(productsOnCartContext);
+
+  function onAddProduct() {
+    setProducts([product, ...products]);
+    toast.success("Produto adicionado no carrinho!");
+  }
+
   return (
-    <div className="flex items-center justify-center text-white font-bold text-lg bg-red-500 rounded-full size-8 hover:cursor-pointer hover:bg-red-600 ">
-      +
-    </div>
+    <button
+      onClick={onAddProduct}
+      className="flex items-center justify-center text-white font-bold text-lg bg-red-500 rounded-full size-8  hover:cursor-pointer hover:bg-red-600"
+    >
+      <i className="fa-sharp fa-regular fa-plus"></i>
+    </button>
   );
 }
 

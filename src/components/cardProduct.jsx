@@ -11,7 +11,7 @@ function CardProduct({ product }) {
 
         <div className="flex justify-between">
           <p>{formatCurrency(product.price)}</p>
-          <AddCartBtn />
+          <AddCartBtn product={product} />
         </div>
       </div>
     </div>
