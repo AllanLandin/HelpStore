@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { ProductsOnCartProvider } from "./contexts/ProductContext.jsx";
 import { Toaster } from "react-hot-toast";
+import { AppContextProvider } from "./contexts/appContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <ProductsOnCartProvider>
+    <AppContextProvider>
       <App />
       <Toaster position="bottom-right" />
-    </ProductsOnCartProvider>
+    </AppContextProvider>
   </React.StrictMode>
 );

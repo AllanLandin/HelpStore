@@ -1,4 +1,3 @@
-import { useState } from "react";
 import formatCurrency from "../utils/formatCurrency";
 import AddCartBtn from "../components/AddCartBtn";
 
