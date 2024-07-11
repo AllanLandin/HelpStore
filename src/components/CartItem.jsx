@@ -1,5 +1,4 @@
 import formatCurrency from "../utils/formatCurrency";
-
 function CartItem({ product }) {
   return (
     <div className="flex gap-2 p-3 shadow-lg rounded bg-slate-500">

@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { appContext } from "../contexts/appContext";
 
 function Header() {
+  const [products, setProducts, modalIsVisible, setModalIsVisible] =
+    useContext(appContext);
+
+  function openModal() {
+    setModalIsVisible(true);
+  }
+
   return (
     <div className="flex justify-between items-center gap-5 py-5">
       <div className="text-2xl">
@@ -17,7 +25,7 @@ function Header() {
           <i className="fa-solid fa-magnifying-glass hover:text-red-500"></i>
         </button>
       </form>
-      <button>
+      <button onClick={openModal}>
         <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500"></i>
       </button>
     </div>
