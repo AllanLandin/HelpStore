@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import { appContext } from "../contexts/appContext";
 
 function Header() {
-  const [products, setProducts, modalIsVisible, setModalIsVisible] =
+  const { products, setProducts, modalIsVisible, setModalIsVisible } =
     useContext(appContext);
 
   function openModal() {

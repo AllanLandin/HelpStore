@@ -4,11 +4,26 @@ import { appContext } from "../contexts/appContext";
 import formatCurrency from "../utils/formatCurrency";
 
 function Cart() {
-  const [products, setProducts, modalIsVisible, setModalIsVisible] =
-    useContext(appContext);
+  const {
+    products,
+    setProducts,
+    setBuyConfirmedIsVisible,
+    modalIsVisible,
+    setModalIsVisible,
+  } = useContext(appContext);
+
+  function deleteAllItems() {
+    setProducts([]);
+  }
 
   function closeModal() {
     setModalIsVisible(false);
+  }
+
+  function openBuyConfirmedComp() {
+    setBuyConfirmedIsVisible(true);
+    deleteAllItems();
+    closeModal();
   }
 
   return !modalIsVisible ? (
@@ -16,16 +31,19 @@ function Cart() {
   ) : (
     <div
       id="cart"
-      className="z-50 bg-red-500 w-full sm:w-1/2 md:1/3 h-full fixed top-0 right-0 p-3 sm:rounded-s-lg text-white transition duration-150 flex flex-col gap-2"
+      className="z-50 bg-red-500 w-full sm:w-1/2 md:1/3 h-full fixed top-0 right-0 p-3 sm:rounded-s-lg text-white transition duration-150 flex flex-col gap-2 overflow-auto"
     >
       <button onClick={closeModal} className="flex flex-col w-full">
         <i className="fa-solid fa-xmark self-end text-3xl hover:cursor-pointer hover:text-red-500"></i>
       </button>
-      <div className="flex justify-between">
+      <div className="flex justify-between border-b py-5">
         <h2 className="text-2xl underline mb-2">
           Carrinho ({products.length})
         </h2>
-        <button className="bg-white rounded text-black p-2 hover:bg-slate-100">
+        <button
+          className="bg-white rounded text-black p-2 hover:bg-slate-100"
+          onClick={deleteAllItems}
+        >
           Apagar tudo
         </button>
       </div>
@@ -44,7 +62,10 @@ function Cart() {
           </p>
         </div>
         {products.length > 0 && (
-          <button className="bg-green-500 rounded hover:bg-green-300 p-2">
+          <button
+            onClick={openBuyConfirmedComp}
+            className="bg-green-500 rounded hover:bg-green-300 p-2"
+          >
             Finalizar compra
           </button>
         )}

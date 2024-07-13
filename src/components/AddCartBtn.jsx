@@ -3,7 +3,7 @@ import { appContext } from "../contexts/appContext";
 import toast from "react-hot-toast";
 
 function AddCartBtn({ product }) {
-  const [products, setProducts] = useContext(appContext);
+  const { products, setProducts } = useContext(appContext);
 
   function onAddProduct() {
     setProducts([product, ...products]);
