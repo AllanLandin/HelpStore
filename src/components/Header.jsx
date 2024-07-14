@@ -1,12 +1,21 @@
 import { useState, useContext } from "react";
 import { appContext } from "../contexts/appContext";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const navigate = useNavigate();
+
   const { products, setProducts, modalIsVisible, setModalIsVisible } =
     useContext(appContext);
 
   function openModal() {
     setModalIsVisible(true);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const query = e.target[0].value;
+    navigate(`/searchProduct?q=${query}`);
   }
 
   return (
@@ -15,7 +24,10 @@ function Header() {
         <span className="text-red-500 font-bold">Help</span>
         Store
       </div>
-      <form className="flex grow max-w-xl justify-between rounded p-2 border border-current focus-within:border-red-500">
+      <form
+        onSubmit={handleSubmit}
+        className="flex grow max-w-xl justify-between rounded p-2 border border-current focus-within:border-red-500"
+      >
         <input
           className="grow bg-transparent focus:outline-none placeholder:text-white-500"
           type="search"
