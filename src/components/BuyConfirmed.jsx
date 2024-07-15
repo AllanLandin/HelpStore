@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { appContext } from "../contexts/appContext";
 import { useNavigate } from "react-router-dom";
 
 function BuyConfirmed() {

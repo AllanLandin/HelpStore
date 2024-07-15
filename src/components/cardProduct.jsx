@@ -1,5 +1,5 @@
-import formatCurrency from "../utils/formatCurrency";
-import AddCartBtn from "../components/AddCartBtn";
+import formatCurrency from "src/utils/formatCurrency";
+import AddCartBtn from "src/components/AddCartBtn";
 
 function CardProduct({ product }) {
   return (

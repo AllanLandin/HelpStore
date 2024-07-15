@@ -1,6 +1,6 @@
-import ProductsDisplay from "../../components/ProductsDisplay";
-import Header from "../../components/Header";
-import Main from "../../components/Main";
+import ProductsDisplay from "src/components/ProductsDisplay";
+import Header from "src/components/Header";
+import Main from "src/components/Main";
 
 function HomePage() {
   return (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { appContext } from "../contexts/appContext";
+import { appContext } from "src/contexts/appContext";
 import toast from "react-hot-toast";
 
 function AddCartBtn({ product }) {

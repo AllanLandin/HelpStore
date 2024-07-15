@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import CartItem from "./CartItem";
-import { appContext } from "../contexts/appContext";
-import formatCurrency from "../utils/formatCurrency";
+import { appContext } from "src/contexts/appContext";
+import formatCurrency from "src/utils/formatCurrency";
 import { useNavigate } from "react-router-dom";
 
 function Cart() {

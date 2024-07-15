@@ -1,5 +1,5 @@
-import formatCurrency from "../utils/formatCurrency";
-import { appContext } from "../contexts/appContext";
+import formatCurrency from "src/utils/formatCurrency";
+import { appContext } from "src/contexts/appContext";
 import { useContext } from "react";
 
 function CartItem({ product }) {

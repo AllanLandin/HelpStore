@@ -1,8 +1,8 @@
 import { useState, useContext } from "react";
-import { appContext } from "../contexts/appContext";
+import { appContext } from "src/contexts/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
-import fetchProducts from "../api/fetchProducts";
+import fetchProducts from "src/api/fetchProducts";
 
 function Header() {
   const navigate = useNavigate();

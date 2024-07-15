@@ -9,7 +9,7 @@ function ProductsDisplay() {
 
   return (
     <>
-      <div>
+      <article id="products">
         {categories.map((category, index) => {
           return (
             <div className="my-5" key={index + 1}>
@@ -23,7 +23,7 @@ function ProductsDisplay() {
             </div>
           );
         })}
-      </div>
+      </article>
     </>
   );
 }
