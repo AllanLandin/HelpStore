@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { appContext } from "../contexts/appContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
+import Cart from "./Cart";
 
 function Header() {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ function Header() {
       <button onClick={openModal}>
         <i className="fa-solid fa-cart-shopping text-lg hover:text-red-500"></i>
       </button>
+      <Cart />
     </div>
   );
 }

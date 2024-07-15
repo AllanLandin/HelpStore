@@ -2,8 +2,10 @@ import { useContext } from "react";
 import CartItem from "./CartItem";
 import { appContext } from "../contexts/appContext";
 import formatCurrency from "../utils/formatCurrency";
+import { useNavigate } from "react-router-dom";
 
 function Cart() {
+  const navigation = useNavigate();
   const {
     products,
     setProducts,
@@ -21,7 +23,7 @@ function Cart() {
   }
 
   function openBuyConfirmedComp() {
-    setBuyConfirmedIsVisible(true);
+    navigation("/buyConfirm");
     deleteAllItems();
     closeModal();
   }
