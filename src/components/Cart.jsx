@@ -50,8 +50,8 @@ function Cart() {
         </button>
       </div>
       <ul className="flex flex-col gap-5 overflow-auto flex-grow underline underline-offset-8">
-        {products.map((product) => (
-          <CartItem product={product} />
+        {products.map((product, index) => (
+          <CartItem key={index} product={product} />
         ))}
       </ul>
       <div className="flex flex-col gap-5 text-xl border-t py-2">

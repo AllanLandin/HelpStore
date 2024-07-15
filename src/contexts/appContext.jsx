@@ -6,6 +6,7 @@ function AppContextProvider({ children }) {
   const [products, setProducts] = useState([]);
   const [modalIsVisible, setModalIsVisible] = useState(false);
   const [buyConfirmedIsVisible, setBuyConfirmedIsVisible] = useState(false);
+  const [productsSearched, setProductsSearched] = useState([]);
 
   return (
     <appContext.Provider
@@ -16,6 +17,8 @@ function AppContextProvider({ children }) {
         setModalIsVisible,
         buyConfirmedIsVisible,
         setBuyConfirmedIsVisible,
+        productsSearched,
+        setProductsSearched,
       }}
     >
       {children}

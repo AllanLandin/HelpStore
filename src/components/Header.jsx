@@ -1,13 +1,20 @@
 import { useState, useContext } from "react";
 import { appContext } from "../contexts/appContext";
-import { useNavigate, Outlet } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Cart from "./Cart";
+import fetchProducts from "../api/fetchProducts";
 
 function Header() {
   const navigate = useNavigate();
 
-  const { products, setProducts, modalIsVisible, setModalIsVisible } =
-    useContext(appContext);
+  const {
+    products,
+    setProducts,
+    modalIsVisible,
+    setModalIsVisible,
+    productsSearched,
+    setProductsSearched,
+  } = useContext(appContext);
 
   function openModal() {
     setModalIsVisible(true);
@@ -16,15 +23,18 @@ function Header() {
   function handleSubmit(e) {
     e.preventDefault();
     const query = e.target[0].value;
-    navigate(`/searchProduct?q=${query}`);
+    fetchProducts(query).then((data) => {
+      setProductsSearched(data.results);
+      navigate(`/searchProduct?q=${query}`);
+    });
   }
 
   return (
     <div className="flex justify-between items-center gap-5 py-5">
-      <div className="text-2xl">
+      <Link to="/" className="text-2xl">
         <span className="text-red-500 font-bold">Help</span>
         Store
-      </div>
+      </Link>
       <form
         onSubmit={handleSubmit}
         className="flex grow max-w-xl justify-between rounded p-2 border border-current focus-within:border-red-500"
