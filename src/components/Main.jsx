@@ -10,7 +10,7 @@ function Main() {
         <img
           loading="lazy"
           className="hidden sm:block sm:size-2/3"
-          src="/src/assets/ilustration.jpg"
+          src="ilustration.jpg"
         ></img>
       </div>
       <a
