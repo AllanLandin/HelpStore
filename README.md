@@ -1,8 +1,16 @@
-# React + Vite
+# HelpStore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+HelpStore é um site do formato e-commerce que utiliza a API do mercado livre para buscar produtos. 
 
-Currently, two official plugins are available:
+# Tecnologias
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A aplicação foi construída com React, Tailwindcss e Vite.
+
+# Preview
+
+https://github.com/user-attachments/assets/fc11372e-1e84-4f61-aee6-95f5251968db
+
+# Deploy
+
+A aplicação foi lançada por meio da netlify no endereço: https://e-commerce202.netlify.app/
+
